@@ -15,7 +15,9 @@
         <input id="email" name="email" type="email" autocomplete="email" required />
         <button type="submit">Sign up</button>
       </form>
-      <p id="updates-message" hidden>Thanks for signing up. We will share updates soon.</p>
+      <p id="updates-message" role="status" aria-live="polite" tabindex="-1" hidden>
+        Thanks for signing up. We will share updates soon.
+      </p>
     </main>
     <script>
       const updatesForm = document.getElementById("updates-form");
@@ -24,6 +26,7 @@
         event.preventDefault();
         updatesMessage.hidden = false;
         updatesForm.reset();
+        updatesMessage.focus();
       });
     </script>
   </body>
