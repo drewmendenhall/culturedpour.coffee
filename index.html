@@ -10,11 +10,12 @@
       <h1>Cultured Pour</h1>
       <img src="assets/placeholder.svg" alt="Cultured Pour placeholder graphic" width="320" height="180" />
 
-      <form id="updates-form">
+      <form id="updates-form" action="#" method="post">
         <label for="email">Sign up for email updates</label>
         <input id="email" name="email" type="email" autocomplete="email" required />
         <button type="submit">Sign up</button>
       </form>
+      <noscript>Please enable JavaScript to submit the email updates form.</noscript>
       <div id="updates-message" role="status" aria-live="polite" tabindex="-1" hidden>
         Thanks for signing up. We will share updates soon.
       </div>
@@ -26,7 +27,7 @@
         event.preventDefault();
         updatesMessage.hidden = false;
         updatesForm.reset();
-        updatesMessage.focus();
+        document.getElementById("email").focus();
       });
     </script>
   </body>
