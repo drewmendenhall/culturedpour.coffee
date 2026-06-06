@@ -10,11 +10,21 @@
       <h1>Cultured Pour</h1>
       <img src="assets/placeholder.svg" alt="Cultured Pour placeholder graphic" width="320" height="180" />
 
-      <form action="#" method="post">
+      <form id="updates-form">
         <label for="email">Sign up for email updates</label>
         <input id="email" name="email" type="email" autocomplete="email" required />
         <button type="submit">Sign up</button>
       </form>
+      <p id="updates-message" hidden>Thanks for signing up. We will share updates soon.</p>
     </main>
+    <script>
+      const updatesForm = document.getElementById("updates-form");
+      const updatesMessage = document.getElementById("updates-message");
+      updatesForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        updatesMessage.hidden = false;
+        updatesForm.reset();
+      });
+    </script>
   </body>
 </html>
