@@ -36,6 +36,9 @@
         padding: 0.5em;
       }
 
+      #updates-form {
+        position: relative;
+      }
       #updates-form #email {
         background: transparent;
         border: 1px solid var(--color);
@@ -45,6 +48,9 @@
         background: transparent;
         border: 1px solid var(--color);
         border-radius: 1em;
+      }
+      #updates-form #updates-message {
+        position: absolute;
       }
     </style>
     <main>
@@ -61,11 +67,11 @@
           required
         />
         <button type="submit">Sign up</button>
+        <div id="updates-message" role="status" aria-live="polite" tabindex="-1" hidden>
+          Thanks for signing up. We will share updates soon.
+        </div>
       </form>
       <noscript>Please enable JavaScript to submit the email updates form.</noscript>
-      <div id="updates-message" role="status" aria-live="polite" tabindex="-1" hidden>
-        Thanks for signing up. We will share updates soon.
-      </div>
     </main>
     <script>
       const updatesForm = document.getElementById("updates-form");
